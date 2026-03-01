@@ -1,0 +1,84 @@
+# Configuración de modos del Fullstack SDD Executor
+# Ambos modos tienen seguridad obligatoria (no negociable)
+
+startup:
+  description: "Modo enfocado en MVPs y desarrollo rápido con arquitectura simple."
+  keywords_detect:
+    - "MVP"
+    - "prototipo"
+    - "experimento"
+    - "startup"
+    - "rápido"
+    - "lanzamiento"
+  architecture_preference:
+    - "modular-monolith"
+    - "monolith"
+  testing:
+    min_coverage: 0.70
+    require_unit: true
+    require_integration: true
+    require_e2e: true
+    require_load_tests: false
+  performance:
+    profile_critical_paths_only: true
+  security:
+    enforce_baseline: true
+    extra_enterprise_checks: false
+  antigravity_kit_skills:
+    architecture: ["app-builder", "architecture", "plan-writing"]
+    frontend: ["react-best-practices", "frontend-design"]
+    backend: ["api-patterns", "nodejs-best-practices"]
+    database: ["database-design"]
+    testing: ["tdd-workflow", "testing-patterns", "lint-and-validate", "clean-code"]
+    security: ["vulnerability-scanner"]
+    devops: ["deployment-procedures"]
+
+enterprise:
+  description: "Modo enfocado en sistemas críticos, compliance y robustez."
+  keywords_detect:
+    - "compliance"
+    - "regulado"
+    - "SLA"
+    - "PCI"
+    - "HIPAA"
+    - "finanzas"
+    - "salud"
+    - "enterprise"
+    - "multi-equipo"
+    - "producción crítica"
+  architecture_preference:
+    - "modular-monolith"
+    - "service-oriented"
+  testing:
+    min_coverage: 0.85
+    require_unit: true
+    require_integration: true
+    require_e2e: true
+    require_load_tests: true
+  performance:
+    profile_all_endpoints: true
+    require_sla_validation: true
+  security:
+    enforce_baseline: true
+    extra_enterprise_checks: true
+    require_dependency_audit: true
+    require_sast_review: true
+  antigravity_kit_skills:
+    architecture: ["app-builder", "architecture", "plan-writing"]
+    frontend: ["react-best-practices", "frontend-design", "web-design-guidelines"]
+    backend: ["api-patterns", "nodejs-best-practices"]
+    database: ["database-design"]
+    testing: ["tdd-workflow", "testing-patterns", "webapp-testing", "code-review-checklist", "lint-and-validate", "clean-code"]
+    security: ["vulnerability-scanner", "red-team-tactics"]
+    devops: ["deployment-procedures", "server-management"]
+    observability: ["performance-profiling", "systematic-debugging"]
+
+# Regla global: la seguridad NUNCA se puede desactivar en ningún modo
+global_security_rules:
+  enforce_security_baseline: true
+  allow_security_bypass: false
+  security_baseline_file: "config/security_baseline.md"
+  message_on_bypass_attempt: >
+    La seguridad es obligatoria en todos los modos. No es posible omitir
+    la validación del security baseline. Ofrezca al usuario una alternativa
+    que implemente menos funcionalidades pero mantenga los estándares mínimos.
