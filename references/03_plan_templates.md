@@ -254,3 +254,42 @@ CREATE INDEX idx_comments_user_id ON comments(user_id);
 - [ ] Decisiones técnicas documentadas
 - [ ] Riesgos identificados con mitigación
 - [ ] Estimación realista
+
+
+---
+
+## 9. Notas de Arquitectura (Antigravity Kit, si aplica)
+
+Si este proyecto se está ejecutando en Antigravity, esta sección documenta cómo el plan fue generado con soporte de las skills de Antigravity Kit.
+
+### Skills de Antigravity Kit utilizadas
+
+- [ ] `antigravity-kit/architecture` — Decisiones de arquitectura de alto nivel y ADRs
+- [ ] `antigravity-kit/database-design` — Modelo de datos y relaciones
+- [ ] `antigravity-kit/api-patterns` — Contratos de API, códigos de estado y payloads
+- [ ] `antigravity-kit/deployment-procedures` — Estrategia de despliegue y entornos
+
+### Decisiones principales de arquitectura
+
+| Decisión | Alternativas consideradas | Justificación | Responsable |
+|----------|--------------------------|---------------|-------------|
+| [Decisión 1] | [Alt A, Alt B] | [Razón] | [Nombre] |
+| [Decisión 2] | [Alt A, Alt B] | [Razón] | [Nombre] |
+
+### Trade-offs aceptados
+
+| Trade-off | Pros | Contras | Decisión |
+|-----------|------|---------|----------|
+| [Trade-off 1] | [Pros] | [Contras] | [Decisión tomada] |
+| [Trade-off 2] | [Pros] | [Contras] | [Decisión tomada] |
+
+### Notas adicionales para el Fullstack SDD Executor
+
+> Si el plan plan fue generado dentro de Antigravity con soporte de skills de arquitectura,
+> el Fullstack SDD Executor puede confiar en este plan y proceder directamente a la implementación.
+> Si el plan carece de decisiones arquitectónicas claras, regenerar la Fase 3 antes de implementar.
+
+- Modo activo del proyecto: `startup` | `enterprise` *(selecciona uno)*
+- Security baseline aplicado: `config/security_baseline.md` ✔
+- Plan aprobado por: [Nombre del revisor]
+- Fecha de aprobación: [YYYY-MM-DD]
